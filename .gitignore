@@ -1,6 +1,6 @@
-*/data/*
-*/temp_*
-*/tmp_
+*data/*
+*temp_*
+*tmp_
 C/vector
 C/vector/*
 C/vector/vector.h
