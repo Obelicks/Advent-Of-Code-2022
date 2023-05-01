@@ -30,6 +30,28 @@ def part1(data):
                 points += 3     
     return points
 
+def part2(data):
+    points = 0
+    dict = {"A":1,"B":2,"C":3,
+            "X":0,"Y":3,"Z":6}
+    for i in data:
+        opponent = i[0]
+        score = i[-1]
+        points += dict[score]
+        if(score == "Y"):
+            points += dict[opponent]
+        if(score == "X"):
+            if(opponent == "A"):
+                points += dict["C"]
+            else:
+                points += dict[opponent]-1
+        if(score == "Z"):
+            if opponent == "C":
+                points += dict["A"]
+            else:
+                points += dict[opponent] +1
+    return points
+
 #This is my solution for advent of code 2022
 DEBUG =False
 #Dictionary of values for Rock(X) Paper(Y) and Scissor(Z) 
@@ -38,7 +60,11 @@ DEBUG =False
 with open("data/2.txt") as file:
       data = [i for i in file.read().split("\n")]
 
-#Iterating the list
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤PART1¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
 points = part1(data)
 
-print(points)
+print("part 1: ", points)
+#¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤PART2¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+points = part2(data)
+
+print("part 2: ", points)
