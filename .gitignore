@@ -1,11 +1,4 @@
 *data*
 *temp_*
 *tmp_
-C/vector
-C/vector/*
-C/vector/vector.h
-C/vector/vector.c
-C/vector/vector
-C/vector/Makefile
-C/vector/CMakeLists.txt
-C/vector/vector.h
+
